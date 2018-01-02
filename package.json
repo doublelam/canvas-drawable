@@ -1,0 +1,23 @@
+{
+  "name": "canvas-drawable",
+  "version": "1.0.0",
+  "description": "Make canvas element drawable",
+  "main": "dist/index",
+  "scripts": {
+    "ntscw":"ntsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "canvas",
+    "drawable",
+    "html",
+    "html5",
+    "edit"
+  ],
+  "author": "lam",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "ntypescript": "^1.201706190042.1"
+  }
+}
