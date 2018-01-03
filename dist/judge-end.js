@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ifHasTouch = function () {
+const ifHasTouch = () => {
     if (window.ontouchstart !== void 0) {
         return true;
     }
