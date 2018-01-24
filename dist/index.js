@@ -55,7 +55,8 @@ class CanvasDrawable {
     }
     getCanvasPaddingAndBorder(canvasContext) {
         const styles = getComputedStyle(canvasContext.canvas);
-        this.domPosition = [canvasContext.canvas.offsetLeft, canvasContext.canvas.offsetTop];
+        const canvasRect = canvasContext.canvas.getBoundingClientRect();
+        this.domPosition = [canvasRect.left, canvasRect.top];
         this.paddingAndBorder = [
             parseFloat(styles.paddingLeft) + parseFloat(styles.borderLeftWidth),
             parseFloat(styles.paddingTop) + parseFloat(styles.borderTopWidth),
