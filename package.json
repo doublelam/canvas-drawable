@@ -1,6 +1,6 @@
 {
   "name": "canvas-drawable",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Make canvas element drawable",
   "main": "dist/index",
   "scripts": {

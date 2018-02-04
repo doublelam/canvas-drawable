@@ -22,6 +22,9 @@ class CanvasDrawable {
         this.canvasContext[type](...opt);
         return this;
     }
+    nativeContext() {
+        return this.canvasContext;
+    }
     setStyle(option) {
         this.pointStyle = option;
         return this;
@@ -52,6 +55,7 @@ class CanvasDrawable {
     }
     setCanvasStroke() {
         this.canvasContext.strokeStyle = this.pointStyle.color;
+        this.canvasContext.lineWidth = this.pointStyle.width;
     }
     getCanvasPaddingAndBorder(canvasContext) {
         const styles = getComputedStyle(canvasContext.canvas);

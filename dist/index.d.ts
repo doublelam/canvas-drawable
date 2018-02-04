@@ -11,6 +11,7 @@ export declare class CanvasDrawable {
     private innerWidthAndHeight;
     constructor(canvasContext: CanvasRenderingContext2D, opt?: StrikeStyle);
     native(type: string, ...opt: any[]): CanvasDrawable;
+    nativeContext(): CanvasRenderingContext2D;
     setStyle(option: StrikeStyle): CanvasDrawable;
     getStyle(): StrikeStyle;
     clearAll(): void;

@@ -25,6 +25,10 @@ export class CanvasDrawable {
     return this;
   }
 
+  public nativeContext(): CanvasRenderingContext2D {
+    return this.canvasContext;
+  }
+
   public setStyle(option: StrikeStyle): CanvasDrawable {
     this.pointStyle = option;
     return this;
@@ -62,6 +66,7 @@ export class CanvasDrawable {
 
   private setCanvasStroke(): void {
     this.canvasContext.strokeStyle = this.pointStyle.color;
+    this.canvasContext.lineWidth = this.pointStyle.width;
   }
 
   private getCanvasPaddingAndBorder(canvasContext: CanvasRenderingContext2D): void {

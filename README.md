@@ -43,4 +43,27 @@ clearAll.onclick = e => {
 }
 ```
 
+## Methods
+
+### new CanvasDrawable(canvasContext, style?: {color: string, width: number})
+
+### endraw()
+let the canvas element be drawable
+
+### enerase()
+change the mode into erase
+
+### setStyle(style: {color: string, width: number})
+set the style of stroke
+
+### cleanAll()
+clean the whole area of the canvas element
+
+### getCanvasBase64(...args);
+returns canvasContext.canvas.toDataURL(...args);
+
+### getCanvasBlob(...args);
+returns a promise that will return the blob of the canvas image
+
+
 
