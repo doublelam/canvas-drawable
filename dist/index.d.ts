@@ -14,7 +14,7 @@ export declare class CanvasDrawable {
     nativeContext(): CanvasRenderingContext2D;
     setStyle(option: StrikeStyle): CanvasDrawable;
     getStyle(): StrikeStyle;
-    clearAll(): void;
+    cleanAll(): void;
     getCanvasBase64(...args: any[]): string;
     getCanvasBlob(...args: any[]): Promise<any>;
     enerase(): CanvasDrawable;

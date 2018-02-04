@@ -38,7 +38,7 @@ export class CanvasDrawable {
     return this.pointStyle;
   }
 
-  public clearAll() {
+  public cleanAll() {
     this.canvasContext.clearRect(0, 0, this.innerWidthAndHeight[0], this.innerWidthAndHeight[1]);
   }
 

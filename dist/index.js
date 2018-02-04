@@ -32,7 +32,7 @@ class CanvasDrawable {
     getStyle() {
         return this.pointStyle;
     }
-    clearAll() {
+    cleanAll() {
         this.canvasContext.clearRect(0, 0, this.innerWidthAndHeight[0], this.innerWidthAndHeight[1]);
     }
     getCanvasBase64(...args) {

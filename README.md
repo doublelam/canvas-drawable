@@ -65,5 +65,6 @@ returns canvasContext.canvas.toDataURL(...args);
 ### getCanvasBlob(...args);
 returns a promise that will return the blob of the canvas image
 
-
+### nativeContext()
+return the convasContext
 
