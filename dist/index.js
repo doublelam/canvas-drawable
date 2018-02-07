@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const judge_end_1 = require("./judge-end");
-class CanvasDrawable {
+import { ifMobile } from "./judge-end";
+export class CanvasDrawable {
     constructor(canvasContext, opt = {
             color: "rgba(0,0,0,.5)",
             width: 1,
@@ -40,9 +38,9 @@ class CanvasDrawable {
     }
     getCanvasBlob(...args) {
         return new Promise((resolve, reject) => {
-            this.canvasContext.canvas.toBlob(blob => resolve(blob), ...args);
-        }).catch(e => {
-            Promise.reject(e);
+            this.canvasContext.canvas.toBlob((blob) => {
+                resolve(blob);
+            }, ...args);
         });
     }
     enerase() {
@@ -78,7 +76,7 @@ class CanvasDrawable {
     }
     bandMethods() {
         const can = this.canvasContext.canvas;
-        if (judge_end_1.ifMobile) {
+        if (ifMobile) {
             can.ontouchstart = e => {
                 const reCoordinate = this.recalculateCoordination([e.touches[0].clientX, e.touches[0].clientY]);
                 this.touched(reCoordinate[0], reCoordinate[1]);
@@ -134,5 +132,4 @@ class CanvasDrawable {
         this.lastEndPoint = endPoint;
     }
 }
-exports.CanvasDrawable = CanvasDrawable;
 //# sourceMappingURL=index.js.map

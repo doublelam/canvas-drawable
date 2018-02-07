@@ -16,7 +16,7 @@ export declare class CanvasDrawable {
     getStyle(): StrikeStyle;
     cleanAll(): void;
     getCanvasBase64(...args: any[]): string;
-    getCanvasBlob(...args: any[]): Promise<any>;
+    getCanvasBlob(...args: any[]): Promise<Blob>;
     enerase(): CanvasDrawable;
     endraw(): CanvasDrawable;
     private setCanvasStroke();

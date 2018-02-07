@@ -1,14 +1,8 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "es6",
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": false,
-    "noLib": false,
-    "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "jsx": "react",
+    "target": "esnext",
     "outDir": "./dist"
   },
   "files": [
@@ -20,5 +14,4 @@
   "exclude": [
     "/**"
   ]
-
 }

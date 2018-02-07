@@ -46,11 +46,11 @@ export class CanvasDrawable {
     return this.canvasContext.canvas.toDataURL(...args);
   }
 
-  public getCanvasBlob(...args): Promise<any> {
+  public getCanvasBlob(...args): Promise<Blob> {
     return new Promise((resolve, reject) => {
-      this.canvasContext.canvas.toBlob(blob => resolve(blob), ...args);
-    }).catch(e => {
-      Promise.reject(e);
+      this.canvasContext.canvas.toBlob((blob: Blob) => {
+        resolve(blob);
+      }, ...args);
     });
   }
 
