@@ -10,6 +10,7 @@ export class CanvasDrawable {
   private drawScale: number = 1;
   private pointMode: PointMode = "DRAW";
   private innerWidthAndHeight: Coordination = [0, 0];
+  private eraseThickness: number = 10;
   constructor(canvasContext: CanvasRenderingContext2D, opt: StrikeStyle = {
     color: "rgba(0,0,0,.5)",
     width: 1,
@@ -30,7 +31,10 @@ export class CanvasDrawable {
   }
 
   public setStyle(option: StrikeStyle): CanvasDrawable {
-    this.pointStyle = option;
+    this.pointStyle = {
+      ...this.pointStyle,
+      ...option,
+    };
     return this;
   }
 
@@ -54,7 +58,10 @@ export class CanvasDrawable {
     });
   }
 
-  public enerase(): CanvasDrawable {
+  public enerase(thickness?: number): CanvasDrawable {
+    if (thickness) {
+      this.eraseThickness = thickness;
+    }
     this.pointMode = "ERASE";
     return this;
   }
@@ -98,10 +105,9 @@ export class CanvasDrawable {
       };
       can.ontouchmove = e => {
         const reCoordinate = this.recalculateCoordination([e.touches[0].clientX, e.touches[0].clientY]);
-        this.moveWhenErase(reCoordinate[0], reCoordinate[1]);
+        this.moveWhenErase(reCoordinate[0], reCoordinate[1], this.eraseThickness);
         this.moveWhenDraw(reCoordinate[0], reCoordinate[1]);
       };
-
       return this;
     }
     can.onmousedown = e => {
@@ -113,7 +119,7 @@ export class CanvasDrawable {
         return;
       }
       const reCoordinate = this.recalculateCoordination([e.clientX, e.clientY]);
-      this.moveWhenErase(reCoordinate[0], reCoordinate[1]);
+      this.moveWhenErase(reCoordinate[0], reCoordinate[1], this.eraseThickness);
       this.moveWhenDraw(reCoordinate[0], reCoordinate[1]);
     };
     return this;
