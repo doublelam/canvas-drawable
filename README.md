@@ -1,5 +1,5 @@
 # Get start
-A package that let the specific canvas elememnt turns to drawable, it can be used to draw things or erase  
+A package that let the specified canvas elememnt turns to drawable, it can be used to draw things or erase  
 ```
   npm install canvas-drawable --save
 ```
@@ -39,7 +39,7 @@ getImage.onclick = e => {
   console.log(drawable.getCanvasBase64())
 }
 clearAll.onclick = e => {
-  drawable.clearAll();
+  drawable.cleanAll();
 }
 ```
 
@@ -50,10 +50,10 @@ clearAll.onclick = e => {
 ### endraw()
 let the canvas element be drawable
 
-### enerase()
-change the mode into erase
+### enerase(thick?:number)
+change the mode into erase besides change the thick of erase
 
-### setStyle(style: {color: string, width: number})
+### setStyle(style: {color?: string, width?: number})
 set the style of stroke
 
 ### cleanAll()
